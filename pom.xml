@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lsx</groupId>
+    <artifactId>everything-lsx</artifactId>
+    <version>1.0.0</version>
+
+    <!--打包格式jar-->
+    <packaging>jar</packaging>
+
+    <!--项目名称-->
+    <name>everything-lsx</name>
+
+    <!--项目描述-->
+    <description>仿照Everything桌面工具，基于Java语言开发的命令行文件搜索工具</description>
+
+    <!--开发者信息-->
+    <developers>
+        <developer>
+            <id>01</id>
+            <name>liu shixiu</name>
+            <email>438967168@qq.com</email>
+            <roles>
+                <role>Creator</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <!--属性信息-->
+    <properties>
+        <encoding>UTF-8</encoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+
+    </properties>
+
+    <!--项目依赖-->
+    <dependencies>
+
+        <!--lombok插件运行依赖的库-->
+        <dependency>
+            <groupId>com.walterjwhite.java.dependencies</groupId>
+            <artifactId>lombok</artifactId>
+            <version>0.0.17</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <!--也可以使用H2数据库-->
+        <!--MySQL数据库依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
+        </dependency>
+    </dependencies>
+
+    <!--配置构建的信息-->
+    <build>
+        <plugins>
+            <!--编译插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+            </plugin>
+
+            <!--打包插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!--配置主类-->
+                            <mainClass>com.lsx.everything.cmd.EverythingCmdApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+
+</project>
