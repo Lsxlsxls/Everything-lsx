@@ -52,12 +52,29 @@
 
 
         <!--也可以使用H2数据库-->
-        <!--MySQL数据库依赖-->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
         </dependency>
+
+
+        <!--MySQL数据库依赖-->
+        <!--
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+             <version>8.0.16</version>
+         </dependency>
+         -->
+
+        <!--数据库的连接池(目的是提高数据库的效率)-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
     </dependencies>
 
     <!--配置构建的信息-->
